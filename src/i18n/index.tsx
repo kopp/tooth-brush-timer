@@ -20,7 +20,7 @@ function detectLocale() {
   return resources[nav] ? nav : DEFAULT
 }
 
-const I18nContext = createContext({ t: (k: string) => k, locale: DEFAULT, setLocale: (l: string) => {} })
+const I18nContext = createContext({ t: (k: string) => k, locale: DEFAULT, setLocale: (_locale: string) => {} })
 
 export function I18nProvider({ children }: { children: React.ReactNode }) {
   const [locale, setLocale] = useState(detectLocale())

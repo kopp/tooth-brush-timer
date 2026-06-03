@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import './tbt.css'
 import BrushingTimer from './components/BrushingTimer'
 import Settings from './components/Settings'

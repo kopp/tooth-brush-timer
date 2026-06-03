@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useI18n } from '../i18n'
 
 const SETTINGS_KEY = 'tbt.settings'
