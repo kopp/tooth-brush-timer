@@ -27,5 +27,8 @@
   "areas.inTopLeft": "Inside — top left",
   "areas.inBottomLeft": "Inside — bottom left",
   "areas.inCenterBottom": "Inside — center bottom",
-  "areas.inCenterTop": "Inside — center top"
+  "areas.inCenterTop": "Inside — center top",
+
+  "done.message": "Well done!",
+  "restart": "Restart"
 }

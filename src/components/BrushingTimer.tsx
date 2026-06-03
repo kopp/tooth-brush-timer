@@ -116,6 +116,7 @@ export default function BrushingTimer() {
   const [index, setIndex] = useState(0);
   const [running, setRunning] = useState(false);
   const [elapsed, setElapsed] = useState(0); // ms
+  const [completed, setCompleted] = useState(false);
 
   const intervalRef = useRef<number | null>(null);
 
@@ -138,14 +139,18 @@ export default function BrushingTimer() {
 
   useEffect(() => {
     const step = steps.current[index];
-    if (!step) {
-      alert("no step");
-      return;
-    }
+    if (!step) return;
     if (elapsed >= step.durationSec * 1000) {
-      setElapsed(0);
-      // move to next
-      setIndex((i) => Math.min(i + 1, steps.current.length - 1));
+      if (index >= steps.current.length - 1) {
+        // finished all steps
+        setCompleted(true);
+        setRunning(false);
+        setElapsed(0);
+      } else {
+        // move to next
+        setElapsed(0);
+        setIndex((i) => i + 1);
+      }
     }
   }, [elapsed, index]);
 
@@ -165,23 +170,57 @@ export default function BrushingTimer() {
   }
 
   function handleBack() {
+    if (completed) {
+      // go to last area and start it
+      setCompleted(false)
+      setIndex(Math.max(0, steps.current.length - 1))
+      setElapsed(0)
+      setRunning(true)
+      return
+    }
+
     if (elapsed < 3000) {
       // go to previous if exists
-      setIndex((i) => Math.max(0, i - 1));
-      setElapsed(0);
+      setIndex((i) => Math.max(0, i - 1))
+      setElapsed(0)
     } else {
       // restart current
-      setElapsed(0);
+      setElapsed(0)
     }
+  }
+
+  function handleRestart() {
+    setCompleted(false)
+    setIndex(0)
+    setElapsed(0)
+    setRunning(true)
   }
 
   return (
     <div className="tbt-timer">
-      {!running && index === 0 && elapsed === 0 ? (
+      {!completed && !running && index === 0 && elapsed === 0 ? (
         <div className="start-screen">
           <button className="start-btn" onClick={handleStart}>
             {t("start")}
           </button>
+        </div>
+      ) : completed ? (
+        <div className="done-screen">
+          <div className="area-top">
+            <div className="area-image-wrap" aria-hidden>
+              <img src="/assets/koala-done.png" alt={t('done.message')} className="area-image" />
+            </div>
+            <div className="area-label">{t('done.message')}</div>
+          </div>
+
+          <div className="controls">
+            <button className="ctrl" onClick={handleBack}>
+              {t("back")}
+            </button>
+            <button className="ctrl" onClick={handleRestart}>
+              {t("restart")}
+            </button>
+          </div>
         </div>
       ) : (
         <div className="running-screen">
