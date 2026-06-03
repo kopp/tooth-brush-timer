@@ -186,8 +186,14 @@ export default function BrushingTimer() {
       ) : (
         <div className="running-screen">
           <div className="area-top">
-            <div className="area-emoji" aria-hidden>
-              {current?.emoji}
+            <div className="area-image-wrap" aria-hidden>
+              {current && (
+                <img
+                  src={`/assets/koala-${current.key}.png`}
+                  alt={t(current.labelKey || "")}
+                  className="area-image"
+                />
+              )}
             </div>
             <div className="area-label">{t(current?.labelKey || "")}</div>
           </div>

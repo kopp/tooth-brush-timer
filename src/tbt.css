@@ -6,13 +6,15 @@ body,html,#root{height:100%}
 .title{font-size:18px;margin:0}
 .gear{background:transparent;border:0;font-size:20px}
 .main{flex:1;display:flex;align-items:center;justify-content:center;padding:12px}
-.tbt-timer{width:100%;max-width:420px}
+.tbt-timer{width:100%;max-width:none}
 .start-screen{display:flex;justify-content:center}
 .start-btn{background:var(--accent);color:white;border:0;padding:16px 28px;border-radius:12px;font-size:20px}
 .running-screen{display:flex;flex-direction:column;gap:12px;align-items:center}
 .area-top{display:flex;flex-direction:column;align-items:center}
-.area-emoji{font-size:48px}
-.area-label{font-size:20px;margin-top:6px}
+.area-image-wrap{width:100%;height:auto;display:flex;align-items:center;justify-content:center;margin:0}
+.area-image{width:100%;height:auto;object-fit:contain;border-radius:12px}
+.area-label{font-size:20px;margin-top:12px;text-align:center}
+
 .progress-wrap{width:90%;min-height:44px;background:#eee;border-radius:999px;overflow:visible;padding:8px 0;display:flex;flex-direction:column;align-items:center}
 .progress-bar{height:12px;background:var(--accent);transition:width .1s linear;border-radius:999px;width:100%}
 .progress-text{margin-top:8px;font-size:14px;color:var(--muted);text-align:center;z-index:1}
