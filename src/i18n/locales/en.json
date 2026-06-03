@@ -1,0 +1,31 @@
+{
+  "app.title": "Tooth Brush Timer",
+  "app.footer": "Brush along!",
+  "start": "Start",
+  "pause": "Pause",
+  "continue": "Continue",
+  "back": "Back",
+  "settings": "Settings",
+  "save": "Save",
+  "cancel": "Cancel",
+  "label.chewing": "Chewing (sec)",
+  "label.outside": "Outside (sec)",
+  "label.inside": "Inside (sec)",
+  "label.language": "Language",
+
+  "areas.chewBottomRight": "Chewing — bottom right",
+  "areas.chewTopRight": "Chewing — top right",
+  "areas.chewTopLeft": "Chewing — top left",
+  "areas.chewBottomLeft": "Chewing — bottom left",
+
+  "areas.outLeft": "Outside — left",
+  "areas.outRight": "Outside — right",
+  "areas.outFront": "Outside — front",
+
+  "areas.inBottomRight": "Inside — bottom right",
+  "areas.inTopRight": "Inside — top right",
+  "areas.inTopLeft": "Inside — top left",
+  "areas.inBottomLeft": "Inside — bottom left",
+  "areas.inCenterBottom": "Inside — center bottom",
+  "areas.inCenterTop": "Inside — center top"
+}

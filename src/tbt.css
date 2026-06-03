@@ -1,0 +1,26 @@
+:root{--bg:#fff7f0;--accent:#ff7a7a;--muted:#666}
+*{box-sizing:border-box}
+body,html,#root{height:100%}
+.app-root{min-height:100vh;display:flex;flex-direction:column;background:linear-gradient(180deg,#fff,#fff7f0)}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:12px}
+.title{font-size:18px;margin:0}
+.gear{background:transparent;border:0;font-size:20px}
+.main{flex:1;display:flex;align-items:center;justify-content:center;padding:12px}
+.tbt-timer{width:100%;max-width:420px}
+.start-screen{display:flex;justify-content:center}
+.start-btn{background:var(--accent);color:white;border:0;padding:16px 28px;border-radius:12px;font-size:20px}
+.running-screen{display:flex;flex-direction:column;gap:12px;align-items:center}
+.area-top{display:flex;flex-direction:column;align-items:center}
+.area-emoji{font-size:48px}
+.area-label{font-size:20px;margin-top:6px}
+.progress-wrap{width:90%;min-height:44px;background:#eee;border-radius:999px;overflow:visible;padding:8px 0;display:flex;flex-direction:column;align-items:center}
+.progress-bar{height:12px;background:var(--accent);transition:width .1s linear;border-radius:999px;width:100%}
+.progress-text{margin-top:8px;font-size:14px;color:var(--muted);text-align:center;z-index:1}
+.controls{display:flex;gap:12px;margin-top:8px}
+.ctrl{padding:8px 14px;border-radius:8px;border:0;background:#fff;color:var(--muted)}
+.settings-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center}
+.settings-panel{background:white;padding:16px;border-radius:12px;width:90%;max-width:360px;display:flex;flex-direction:column;gap:8px}
+.settings-panel label{display:flex;flex-direction:column;font-size:14px}
+.settings-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:8px}
+.footer{text-align:center;padding:8px;color:var(--muted)}
+@media(min-width:600px){.start-btn{font-size:22px}}

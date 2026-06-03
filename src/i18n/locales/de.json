@@ -1,0 +1,31 @@
+{
+  "app.title": "Zahnbürsten-Timer",
+  "app.footer": "Putz mit!",
+  "start": "Start",
+  "pause": "Pause",
+  "continue": "Fortsetzen",
+  "back": "Zurück",
+  "settings": "Einstellungen",
+  "save": "Speichern",
+  "cancel": "Abbrechen",
+  "label.chewing": "Kauflächen (Sek)",
+  "label.outside": "Außen (Sek)",
+  "label.inside": "Innen (Sek)",
+  "label.language": "Sprache",
+
+  "areas.chewBottomRight": "Kaufläche — unten rechts",
+  "areas.chewTopRight": "Kaufläche — oben rechts",
+  "areas.chewTopLeft": "Kaufläche — oben links",
+  "areas.chewBottomLeft": "Kaufläche — unten links",
+
+  "areas.outLeft": "Außen — links",
+  "areas.outRight": "Außen — rechts",
+  "areas.outFront": "Außen — vorne",
+
+  "areas.inBottomRight": "Innen — unten rechts",
+  "areas.inTopRight": "Innen — oben rechts",
+  "areas.inTopLeft": "Innen — oben links",
+  "areas.inBottomLeft": "Innen — unten links",
+  "areas.inCenterBottom": "Innen — Mitte unten",
+  "areas.inCenterTop": "Innen — Mitte oben"
+}
