@@ -1,6 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { useI18n } from "../i18n";
 
+// `base_url` is the public base path provided by Vite at build time
+// (import.meta.env.BASE_URL). Use this to prefix asset URLs so they
+// resolve correctly when the app is hosted from a subpath (GitHub Pages).
+const base_url = import.meta.env.BASE_URL || "/";
+
 type Step = {
   key: string;
   labelKey: string;
@@ -135,7 +140,7 @@ export default function BrushingTimer() {
         clearInterval(intervalRef.current);
       }
     };
-  }, [running, elapsed])
+  }, [running, elapsed]);
 
   useEffect(() => {
     const step = steps.current[index];
@@ -172,28 +177,28 @@ export default function BrushingTimer() {
   function handleBack() {
     if (completed) {
       // go to last area and start it
-      setCompleted(false)
-      setIndex(Math.max(0, steps.current.length - 1))
-      setElapsed(0)
-      setRunning(true)
-      return
+      setCompleted(false);
+      setIndex(Math.max(0, steps.current.length - 1));
+      setElapsed(0);
+      setRunning(true);
+      return;
     }
 
     if (elapsed < 3000) {
       // go to previous if exists
-      setIndex((i) => Math.max(0, i - 1))
-      setElapsed(0)
+      setIndex((i) => Math.max(0, i - 1));
+      setElapsed(0);
     } else {
       // restart current
-      setElapsed(0)
+      setElapsed(0);
     }
   }
 
   function handleRestart() {
-    setCompleted(false)
-    setIndex(0)
-    setElapsed(0)
-    setRunning(true)
+    setCompleted(false);
+    setIndex(0);
+    setElapsed(0);
+    setRunning(true);
   }
 
   return (
@@ -208,9 +213,13 @@ export default function BrushingTimer() {
         <div className="done-screen">
           <div className="area-top">
             <div className="area-image-wrap" aria-hidden>
-              <img src="/assets/koala-done.png" alt={t('done.message')} className="area-image" />
+              <img
+                src={`${base_url}assets/koala-done.png`}
+                alt={t("done.message")}
+                className="area-image"
+              />
             </div>
-            <div className="area-label">{t('done.message')}</div>
+            <div className="area-label">{t("done.message")}</div>
           </div>
 
           <div className="controls">
@@ -228,7 +237,7 @@ export default function BrushingTimer() {
             <div className="area-image-wrap" aria-hidden>
               {current && (
                 <img
-                  src={`/assets/koala-${current.key}.png`}
+                  src={`${base_url}assets/koala-${current.key}.png`}
                   alt={t(current.labelKey || "")}
                   className="area-image"
                 />

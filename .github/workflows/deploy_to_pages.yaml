@@ -19,6 +19,13 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: 24
+      - name: set Vite base path for GitHub Pages
+        # see https://vite.dev/guide/static-deploy#github-pages
+        run: |
+          repo_name=${GITHUB_REPOSITORY#*/}
+          sed -i "s|base: \"\.\/\"|base: \"/${repo_name}/\"|" vite.config.ts
+          cat vite.config.ts
+        shell: bash
       - name: Build frontend
         id: build
         run: |
